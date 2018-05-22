@@ -12,10 +12,17 @@ public class Client {
         VapeHeatCommand vhc = new VapeHeatCommand(vape);
         VapeCoolCommand vcc = new VapeCoolCommand(vape);
 
+        // Create Over object
+        Oven oven = new Oven();
+
+        // Create macro command
+        PrepareFoodandVapeCommand macro = new PrepareFoodandVapeCommand(oven, vape);
+
         // Set remote commands
         remote.setCommand(vpc);
         remote.setDialClockwise(vhc);
         remote.setDialCounterClockwise(vcc);
+        remote.setMacro(macro);
 
         // Turn vape on, turn up heat, turn down heat, turn vape off
         // change heat w/ vape off
@@ -29,5 +36,6 @@ public class Client {
         remote.unPressButton();
         remote.dialClockwise();
         remote.dialCounterClockwise();
+        remote.pressMacro();
     }
 }

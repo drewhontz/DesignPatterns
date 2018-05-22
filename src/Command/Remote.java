@@ -6,6 +6,7 @@ public class Remote {
     private Command dialClockwise;
     private Command dialCounterClockwise;
     private Command lastCommand;
+    private Command macro;
 
     public void setCommand(Command cmd){
         slot = cmd;
@@ -17,6 +18,10 @@ public class Remote {
 
     public void setDialCounterClockwise(Command cmd){
         dialCounterClockwise = cmd;
+    }
+
+    public void setMacro(Command cmd){
+        macro = cmd;
     }
 
     public void buttonPress(){
@@ -36,5 +41,10 @@ public class Remote {
 
     public void unPressButton(){
         lastCommand.undo();
+    }
+
+    public void pressMacro(){
+        lastCommand = macro;
+        macro.execute();
     }
 }
