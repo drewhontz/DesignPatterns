@@ -39,7 +39,7 @@ public class Remote {
         dialCounterClockwise.execute();
     }
 
-    public void unPressButton(){
+    public void pressUndo(){
         lastCommand.undo();
     }
 

@@ -29,11 +29,11 @@ public class Client {
         remote.buttonPress();
         remote.dialClockwise();
         remote.dialClockwise();
-        remote.unPressButton();
+        remote.pressUndo();
         remote.dialClockwise();
         remote.dialCounterClockwise();
         remote.buttonPress();
-        remote.unPressButton();
+        remote.pressUndo();
         remote.dialClockwise();
         remote.dialCounterClockwise();
         remote.pressMacro();
